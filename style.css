@@ -62,14 +62,11 @@ html, body {
     }
 
     .cover {
-      transition: 4s linear(0 0%, 0 75%, 1 100%); 
+      transition: 1s linear 3s; 
       background-color: #5557;
 
-      &:active {
-        transition: 0.2s linear;
-      }
-      
       &:active, :hover+& {
+        transition: 0.2s linear;
         pointer-events: none;
         top: 100%;
       }
