@@ -1,43 +1,36 @@
 html, body {
   margin: 0;
-  padding: 0;
-  width: 100vw;
   height: 100vh;
-  overflow: hidden;
-  background-color: #333;
 }
 
 #grid-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 1fr);
-  width: 100%;
   height: 100%;
 
   >div {
-    width: 100%;
-    height: 100%;
     position: relative;
     
     &:nth-child(odd) {
-      background-color: #E0E0E0; 
+      background-color: #eee; 
     }
 
     &:nth-child(even) {
-      background-color: #CCCCCC; 
+      background-color: #ccc; 
+    }
+
+    >* {
+      position: absolute;
+      inset: 0;
     }
 
     .core {
-      position: absolute;
-      inset: 0;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
+      display: grid;
+      place-items: center;
   
       ul {
         list-style: none; 
-        text-align: left; 
         padding: 0;
         margin: 0;
         width: 28vw; 
@@ -45,48 +38,34 @@ html, body {
         li {
           margin-bottom: 8px; 
           padding: 10px; 
-          background-color: #A0A0A0; 
-          color: #333;
+          background-color: #aaa; 
+          color: #eee;
           cursor: pointer; 
           border-radius: 4px; 
-          /* transition: 20s ease;  */
-          background-image: conic-gradient(#606060, #606060);
+          background-image: conic-gradient(#777, #777);
           background-repeat: no-repeat;
-        
-          &.selected {
-            background-color: #606060; 
-            color: white;
-          }
 
-          &:hover:not(:active) {
-            filter: contrast(1.7);
+          &:hover {
+            filter: contrast(2);
           }
 
           &:active {
             background-position-x: 28vw;
-            color: #333;
+            color: #000;
           }
 
           &:not(:active) {
-            transition: 60s linear; 
-            color: #eee;
+            transition: all 0.5s ease, background-position-x 60s linear, color 60s linear; 
           }
         }
-      }
-
-      &:hover+.cover {
-        pointer-events: none;
-        top: 100%;
       }
     }
 
     .cover {
-      position: absolute;
-      inset: 0;
       transition: 0.5s ease; 
-      background-color: #8887;
+      background-color: #5557;
       
-      &:active {
+      &:active, :hover+& {
         pointer-events: none;
         top: 100%;
       }
