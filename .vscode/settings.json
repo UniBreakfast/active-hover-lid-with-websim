@@ -1,0 +1,9 @@
+{
+  "workbench.colorCustomizations": {
+    "editor.lineHighlightBackground": "#1073cf2d",
+    "editor.lineHighlightBorder": "#9fced11f",
+    "activityBar.background": "#291486",
+    "titleBar.activeBackground": "#3A1CBB",
+    "titleBar.activeForeground": "#FAF9FE"
+  }
+}
