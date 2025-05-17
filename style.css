@@ -62,8 +62,12 @@ html, body {
     }
 
     .cover {
-      transition: 0.5s ease; 
+      transition: 4s linear(0 0%, 0 75%, 1 100%); 
       background-color: #5557;
+
+      &:active {
+        transition: 0.2s linear;
+      }
       
       &:active, :hover+& {
         pointer-events: none;
